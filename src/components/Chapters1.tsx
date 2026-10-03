@@ -27,10 +27,10 @@ export const IntroScreen = ({ onStart }: { onStart: () => void }) => {
   }, []);
 
   const bgImages = [
-    { src: childhoodPhoto, style: { top: '10%', left: '5%', transform: 'rotate(-6deg)' } },
-    { src: schoolPhoto, style: { bottom: '10%', right: '5%', transform: 'rotate(4deg)' } },
-    { src: siblingPhoto, style: { top: '15%', right: '10%', transform: 'rotate(2deg)' } },
-    { src: photo2, style: { bottom: '15%', left: '10%', transform: 'rotate(-3deg)' } },
+    { src: childhoodPhoto, style: { top: '10%', left: '5%', transform: 'rotate(-6deg)' }, className: "w-40 h-56 md:w-64 md:h-80" },
+    { src: schoolPhoto, style: { bottom: '10%', right: '5%', transform: 'rotate(4deg)' }, className: "w-48 h-40 md:w-72 md:h-56" },
+    { src: siblingPhoto, style: { top: '15%', right: '8%', transform: 'rotate(3deg)' }, className: "w-48 h-56 md:w-72 md:h-80" },
+    { src: photo2, style: { bottom: '5%', left: '10%', transform: 'rotate(-4deg)' }, className: "w-32 h-60 md:w-56 md:h-[28rem]" },
   ];
 
   return (
@@ -39,14 +39,15 @@ export const IntroScreen = ({ onStart }: { onStart: () => void }) => {
         {bgImages.map((img, i) => (
           <AnimatePresence key={i}>
             {step >= i && (
-              <motion.img
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.15, scale: 1 }}
-                transition={{ duration: 2 }}
-                src={img.src}
-                className="absolute w-40 md:w-64 object-contain rounded-sm shadow-2xl"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 0.12, scale: 1 }}
+                transition={{ duration: 3, ease: "easeOut" }}
+                className={`absolute rounded-md shadow-2xl overflow-hidden border border-white/5 bg-white/5 ${img.className}`}
                 style={img.style}
-              />
+              >
+                <img src={img.src} alt="Memory fade" className="w-full h-full object-cover" />
+              </motion.div>
             )}
           </AnimatePresence>
         ))}
