@@ -106,7 +106,7 @@ export const FinalLetter = () => (
         initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 2, delay: 1 }} viewport={{ once: true }}
         className="border-t border-white/10 pt-16 mt-16"
       >
-        <h1 className="text-4xl md:text-5xl font-cinematic text-ivory mb-6">Happy 20th Birthday, Thanagmehhh.</h1>
+        <h1 className="text-4xl md:text-5xl font-cinematic text-ivory mb-6">Happy 20th Birthday, Thangamehhh.</h1>
         <p className="text-xl text-gold italic font-cinematic">Lots of Love...., Your Akka ❤️</p>
       </motion.div>
     </motion.div>
@@ -142,7 +142,7 @@ export const HiddenMessage = () => {
 
   return (
     <Chapter className={`transition-colors duration-[3000ms] ${isOpen ? 'bg-[#030303]' : 'bg-black'} flex-col justify-center items-center relative overflow-hidden py-32`}>
-      
+
       {isOpen && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-40 fixed">
           {[...Array(25)].map((_, i) => (
@@ -159,7 +159,7 @@ export const HiddenMessage = () => {
 
       <AnimatePresence mode="wait">
         {!isOpen ? (
-          <motion.div 
+          <motion.div
             key="closed"
             exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
             transition={{ duration: 1.5 }}
@@ -177,7 +177,7 @@ export const HiddenMessage = () => {
                 04 <span className="text-gold/50 mx-1">•</span> 10 <span className="text-gold/50 mx-1">•</span> 2006
               </h2>
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +187,7 @@ export const HiddenMessage = () => {
             >
               There's something I want you to know…
             </motion.p>
-            
+
             <motion.button
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -200,7 +200,7 @@ export const HiddenMessage = () => {
             </motion.button>
           </motion.div>
         ) : (
-          <motion.div 
+          <motion.div
             key="open"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -215,11 +215,10 @@ export const HiddenMessage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2, delay: 0.3 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className={`text-xl md:text-3xl font-serif leading-relaxed ${
-                    i === 0 ? 'text-3xl md:text-5xl text-gold mb-12 font-cinematic tracking-wide' :
+                  className={`text-xl md:text-3xl font-serif leading-relaxed ${i === 0 ? 'text-3xl md:text-5xl text-gold mb-12 font-cinematic tracking-wide' :
                     i === letterLines.length - 1 ? 'text-3xl md:text-5xl text-gold mt-20 tracking-wider font-cinematic' :
-                    'text-ivory/90 font-light'
-                  }`}
+                      'text-ivory/90 font-light'
+                    }`}
                 >
                   {line.split('\n').map((part, j) => (
                     <span key={j} className="block py-1">{part}</span>
@@ -236,7 +235,7 @@ export const HiddenMessage = () => {
               className="pt-40 pb-20 w-full flex flex-col items-center border-t border-white/5 mt-40 space-y-16"
             >
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-cinematic text-ivory tracking-wider md:tracking-widest uppercase break-words w-full px-2" style={{ textShadow: '0 0 40px rgba(255,255,255,0.1)' }}>
-                Happy 20th Birthday,<br/> Thambi.
+                Happy 20th Birthday,<br /> Thambi.
               </h1>
               <p className="text-2xl md:text-4xl text-ivory/80 font-serif italic">
                 Love you more than I know how to say.
